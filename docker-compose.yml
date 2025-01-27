@@ -55,9 +55,6 @@ services:
     env_file: 
       - "node-red/prod.env"
       - "stack.env"
-    devices:
-      - "COM5:/dev/ttyS0"
-      - "COM6:/dev/ttyS1"
 
 volumes:
   node-red-data:
