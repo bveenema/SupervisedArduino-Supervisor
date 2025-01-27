@@ -6,7 +6,7 @@ services:
   #   container_name: SupervisedArduino-db
   #   build: ./db
   #   env_file:
-  #     - .env
+  #     - stack.env
   #   volumes:
   #     - ./db_data:/var/lib/postgresql/data
   #   networks:
@@ -23,7 +23,7 @@ services:
   #   container_name: SupervisedArduino-db-manager
   #   build: ./db-manager
   #   env_file:
-  #     - .env
+  #     - stack.env
   #   volumes:
   #     # Example changelog is in db-manager/changelog - update per application needs
   #     - ./db-manager/changelog:/liquibase/changelog
@@ -54,7 +54,7 @@ services:
       - SupervisedArduino-net
     env_file: 
       - "node-red/prod.env"
-      - ".env"
+      - "stack.env"
     devices:
       - "COM5:/dev/ttyS0"
       - "COM6:/dev/ttyS1"
