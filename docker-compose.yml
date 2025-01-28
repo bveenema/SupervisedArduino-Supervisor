@@ -55,6 +55,7 @@ services:
     env_file: 
       - "node-red/prod.env"
       - "stack.env"
+    privileged: true # required for serial port access (Needs another method for better security)
 
 volumes:
   node-red-data:

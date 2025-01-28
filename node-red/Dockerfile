@@ -3,14 +3,20 @@ FROM nodered/node-red:latest
 # FROM nodered/node-red:4.0.2
 
 ### Install linux packages
-# USER root
-#     # Update the package list
-#     RUN apk update
-#     # Install poppler-utils: PDF manipulation utilities
-#     RUN apk add poppler-utils
-#     # Install zip: allows to zip files 
-#     RUN apk add zip
-# USER node-red
+USER root
+    # # Update the package list
+    # RUN apk update
+
+    # # Install Shadow: allows to add user to dialout group
+    # RUN apk add shadow
+
+    # #give node-red user access to dialout group
+    # RUN usermod -aG dialout node-red
+
+    # give node-red user access to dialout group
+    RUN adduser node-red dialout
+    
+USER node-red
 
 
 # Install pallette dependencies
