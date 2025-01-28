@@ -50,6 +50,7 @@ services:
     volumes:
       - node-red-data:/data
       - ./node-red/settings.js:/data/settings.js
+      - ./node-red/proto:/data/proto
     networks:
       - SupervisedArduino-net
     env_file: 
